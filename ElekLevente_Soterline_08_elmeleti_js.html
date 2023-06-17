@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elméleti Vizsga - JS</title>
+</head>
+<body>
+    <p>Mikor használandó a JS egy weboldal felépítése során, hogyan használható?</p>
+    <p>Míg a HTML-lel az oldal struktúráját, szerkezet tudjuk megadni, a CSS-sel pedig ennek a szerkezetnek a küllemét, addig a JS-s arra használhatjuk, hogy különböző funkciókat rendeljünk hozzá a HTML-ben deklarált tag-ekhez, ezáltal pl. egy gomb kattinthatóvá válik, létre lehet hozni egy kalkulátort stb.</p>
+    <br>
+    <br>
+    <p>Sorold fel, hogyan határozhatunk meg egy értéket és röviden definiáld őket.</p>
+    <p>Két típusú érték van: fix és változó. A fix értékek a literálok, a változók a "változók". A literálokhoz 2 fontos szabály: a számokat írhatjuk tizedesjeggyel vagy anélkül, a szövegeket pedig mindig idézőjellel. </p>
+    <br>
+    <br>
+    <p>Ismertesd a literálókat.</p>
+    <p>String, Numberic, Boolean, Object, Array</p>
+    <p>String - szöveges jellegű, egyes vagy dupla idéző jelbe helyezzük a tartalmát, nincs jelentősége, hogy melyiket használjuk, a jelentése ugyanaz, viszont ha " kezdtük el, akkor " is kell lezárni. Deklarálásuk: () </p>
+    <p>A hagyományos matematikához képest ezeket operátorokkal össze lehet adni, egymás mellé kerül az idézőjelekbe vett tartalom, a szóköz is külön karakternek számít. Ha stringgel kezdünk leírni valamit pl. console.logban, akkor minden utána következő (pl. numeric) stringként fog folytatódni, nem adódnak össze. Ellenben, ha a string előtt van egy összeadás, akkor azt addig numeric-nek veszi és csak utána kezeli stringként: "Legyen" + 6 + 5 -> Legyen65, de 6 + 5 + " Legyen" -> 11 Legyen </p>
+    <p>Numeric - számok, akár egész akár tizedes; matematikai műveletek végezhetők velük, ellenben az operátorok jelentése eltér a matematikában használatosaktól (pl. = nem ua., mint ==) Deklarálásuk: ()</p>
+    <p>Boolean - eldöntendő, igaz-hamis vizsgálat. Deklarálásuk: () </p>
+    <p>Object - objektumokat akkor használunk, amikor valaminek, pl. egy autó vagy egy személy tulajdonságait akarjuk megadni, később pedig meghívni őket. Mivel pl. a személy neve, neme, anyja neve stb. nem változik, ezért érdemes const-tal deklarálni. Meghívása pl.: person.lastName. Deklarálásuk { }-lel történik. </p>
+    <p>Array - a tömbök speciális objektumok, akkor használjuk őket, amikor egynél több adatot akarunk tárolni. Fontos, hogy ezen értékek meghívásakor figyelni kell rá, hogy az első elem a 0 és nem pedig az 1. Deklarálásuk [ ]-lel történik. Metódusok (a teljesség igénye nélkül): push() egy értéket hozzáad a tömbhöz, pop() az utolsó értéket kitörli, shift() az első értéket kitörli és a többi elem számozását hozzáigazítja, unshift() a tömb elejére hozzáad egy értéket és a többi elem számozását hozzáigazítja stb. </p>
+    <br>
+    <br>
+    <p>Hogyan deklarálhatunk egy változót, és hogyan alkalmazhatóak?</p>
+    <p>Változókat a let, var, const kulcsszó használatával lehet megadni. Ezek case-sensitive-ek, tehát kisbetűvel kell írni őket. Meghatározásukkor nem használhatunk kulcsszavakat (pl. let class), mert a class egy tag, más jelentéssel bír, ellenben Class (nagybetűvel) már engedi. (Case sensitive) </p>
+    <p>A const kulcsszót akkor használjuk, ha nem akarjuk, hogy az érték változzon, pl. egy osztály létszáma, személy neve stb. A let blokk szintű változó, a var pedig globális. Mindkettő felülírható a későbbiekben.</p>
+    <br>
+    <br>
+    <p>Mikor kell elágazásokat használni? Ismertesd őket (2-3 mondatban).</p>
+    <p>Amikor valamilyen feltételt akarunk megszabni és több kimenetele van, pl.: 18 év alattiak nem léphetnek be az oldalra. Ha 18 vagy akkor megnyitja, ha nem akkor valami funkció végrehajtódik (másik oldalra átirányít, kiírja, hogy fiatal vagy stb.) Sima elágazás az if és az else, amikor 2 opció van. Az else-t a function végére írjuk, mint "egyéb esetben". Ha 2-nél több elágazás van, akkor bekerül harmadik opcióként az "else if", pl.: ha korcsoportokat akarunk megadni: 10-15 közöttiek, 15-18 közöttiek és 18+ korosztály.</p>
+    <p>Az if, else, else if-en kívül van még a switch, amikor azt szeretnénk, hogy a felsorolt listából egy adott feltétel esetén álljon meg a program futása. (pl.: ki akarjuk választani a kedd-et a hét napjai közül, akkor kedd-ig [2. elem] vizsgálja, az utána következők irrelevánsak már.) </p>
+    <br>
+    <br>
+    <p>Mik azok az Objectek? Írj egy példát is.</p>
+    <p>Object - objektumokat akkor használunk, amikor valaminek, pl. egy autó vagy egy személy tulajdonságait akarjuk megadni, később pedig meghívni őket. Mivel pl. a személy neve, neme, anyja neve stb. nem változik, ezért érdemes const-tal deklarálni. Meghívása pl.: person.lastName. Deklarálásuk { }-lel történik. </p>
+    <p>Példa: const car = {type:"Fiat", model:"500", color:"white", age: "1"};</p>
+    <br>
+    <br>
+    <p>Helyes-e a következő példa, ha nem miért nem? ?!pl: let x :  [ { x= fname: “John”, lname: “Doe, age: “34”},[1,2,3,4, “yes”, “no”] ];</p>
+    <p>A vezetéknév nem került lezárásra " " közé, így hibára fut. Nem helyes, mert egy [ ] belül csak azonos típusú változó lehet (vagy numeric, vagy string vagy boolean).</p>
+    <br>
+    <br>
+    <p>Mik azok az Array-ek? Írj egy példát is.</p>
+    <p>Array - a tömbök speciális objektumok, akkor használjuk őket, amikor egynél több adatot akarunk tárolni. Fontos, hogy ezen értékek meghívásakor figyelni kell rá, hogy az első elem a 0 és nem pedig az 1. Deklarálásuk [ ]-lel történik. Metódusok (a teljesség igénye nélkül): push() egy értéket hozzáad a tömbhöz, pop() az utolsó értéket kitörli, shift() az első értéket kitörli és a többi elem számozását hozzáigazítja, unshift() a tömb elejére hozzáad egy értéket és a többi elem számozását hozzáigazítja stb. </p>
+    <p>Példa: var zöldségek = ["répa", "retek", "hagyma", "uborka", "krumpli"] </p>
+    <br>
+    <br>
+    <p>Hogyan vizsgálható egy tömb?</p>
+    <p>push(), pop(), shift(), unshift(), splice(), slice(), length stb. </p>
+    <br>
+    <br>
+    <p>Hogyan mehetünk végig egy tömb/objects/lista hosszán? (2-3 mondatban)</p>
+    <p>A length tulajdonsággal tudjuk megkérni a lista hosszát.</p>
+    <br>
+    <br>
+    <p>Sorolj fel néhány events metódust.</p>
+    <p>onclick, onmouseover, onchange</p>
+    <br>
+    <br>
+    <p>Miért érdemes függvényeket használni?</p>
+    <p>Újrahasznosítható a későbbiekben is, elég egyszer megírni.</p>
+    <br>
+    <br>
+    <p>Hogyan paraméterezhetünk fel egy függvényt?</p>
+    <p>Deklarálunk értékeket, operátorokat, elágazásokat, eseményeket adunk hozzá, kiírathatjuk console.log-ban, alertben, HTML-ben.</p>
+    <br>
+    <br>
+    <p>Mi az a function visszatérési érték?</p>
+    <p>A metódus végrehajtása után visszakapott érték.</p>
+    <br>
+    <br>
+    <p>Mikor futtatható egy függvény?</p>
+    <p>Például: let x = 500;
+        let y;
+        
+        for(y = 0; y <=500; y++){
+            if(y%2==0){
+                console.log(y)
+            }
+        }</p>
+    <br>
+    <br>
+    <p>Mi az a DOM?</p>
+    <p>Document Object Model - A HTML és az objektumok közötti interakciókat modellezi.</p>
+    <br>
+    <br>
+    <p>Mire utasít a következő példa: document.getElementByClassName(“example”).innerText</p>
+    <p>Az "example" class-szal rendelkező child elementekhez írat ki valamit a honlapra.</p>
+    <br>
+    <br>
+    <p>Hogyan nyerhető ki egy form input mező értéke és hogyan jeleníted azt meg HTML-ben?</p>
+    <p>
+        'input type="text" id="example" value=""  ' <br>
+
+        'button onclick="myFunction"()' '/button' <br>
+
+        'script'
+        'function myFunction(){'
+        document.getElementById("example").value = " ";
+        }
+        'script'
+    </p>
+    <br>
+    <br>
+    <p>Mi az a callback function?</p>
+    <p>Olyan funkció, amely egy másik funkció lefutását követően fut le.</p>
+    <br>
+    <br>
+    <p>Definiáld: Date();</p>
+    <p>Időpont lekérése.</p>
+    <br>
+    <br>
+    <p>Definiáld: onclick();</p>
+    <p>Egy DOM manipulációs eszköz</p>
+    <br>
+    <br>
+    <p>Definiáld: function Click(){…};</p>
+    <p>HTML elemre (gomb, kép stb.) kattintással történik valami</p>
+</body>
+</html>
